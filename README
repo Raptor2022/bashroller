@@ -1,0 +1,39 @@
+1. GETTING STARTED
+
+This is a basic BASH script for rolling dice for your DnD Characters. 
+This is a very basic version and allows you to roll either a set of predefined attacks or by choosing your own die types and amounts to roll in standard die format. 
+Example: Slash or 2d10 are valid argumnets, however attacks like slash must be specified in the "attacks.att" file.
+
+2. Prerequisites
+Knowledge on how to run a bash script from terminal. 
+
+3. Installing
+There are 2 methods for this. 
+3.1) Place the folder "Roller" anywhere on your machine
+3.2) Open Terminal and browse to the roller file to start using it. 
+3.3) If you wish to have the script native without browsing to it each time place the files in the main folder /usr/local/bin/ to call the action command from anywhere in bash. 
+
+4. Using the roller
+
+4.1) type ./action #diearguments (Each die argument is seperated with a space. Example: ./action 2d10 4d5 slash 1d20)
+4.2) For each die roll the program will ask you for a modifier number. You may enter any negative or possitive number including 0. Do not leave it empty.
+
+5. Modifying the attacks file
+
+5.1) Each attack takes a single line in the text based file attacks.att
+5.2) the format will be attackname;dietypes
+5.2.1) Example: magic_missile;2d10
+5.3) ensure that a new line is used for each attack. 
+
+6. Authors
+RaptorRants - L.Crossley
+
+7. Licence
+This software is free to use / modify under the GNU Public Licence rules. 
+
+8. Acknowledgments
+All the vast amounts of knowledge on the internet and various coding platforms where forum posts and questions helped point me to fixing this up for my very first, fully functional bash script. It may seem easy and basic to some but to me this has been an achievement and my first step in a larger world. 
+A special thanks to Mr Page for his input and ideas that helped challenge me on my very first true coding excercise. 
+
+
+

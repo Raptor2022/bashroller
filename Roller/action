@@ -1,0 +1,27 @@
+#! /bin/bash
+
+##if [[ $1 == [+0-9]* ]]; then 
+##	cat attacks.txt  | echo $1 | xargs -I {} ./roll {}
+##elif [[ $1 == [?d][0-9]* ]]; then
+##	cat attacks.txt  | echo $1 | xargs -I {} ./roll {}
+##else
+##	cat attacks.txt  | grep $1 | xargs -I {} ./roll {}
+#fi
+selection=$@
+for action in $@
+
+do
+	if [[ $action =~ ^[0-9]+[a-zA-Z_]+[0-9][d][0-9]+$ ]]; then 
+		./roll "$action"
+	elif [[ $action =~ ^[0-9]*[a-zA-Z]+$ ]]; then
+		attack=$(echo $action | grep -o -E '[A-Za-z]+$')
+		attnum=$(echo $action | grep -o -E '^[0-9]+')
+		arg1=$(cat attacks.att | grep -w "$attack" | sed 's/;/_/g')
+		arg2=$(echo $attnum''$arg1)
+		./roll "$arg2"
+	else
+		./roll "$action"
+	fi
+
+done
+
